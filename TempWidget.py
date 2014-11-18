@@ -50,103 +50,107 @@ class Example(QtGui.QWidget):
     def __init__(self):
         super(Example, self).__init__()    #need this to init the parent classd
 
-        self.resize(179, 171)
-        self.setStyleSheet("background-color: rgba(255, 255, 255, 255);")
+        self.resize(400, 400)
+        self.setStyleSheet("background-color: rgb(0, 0, 0);")
         self.closeButton = QtGui.QPushButton()
-        self.closeButton.setGeometry(QtCore.QRect(160, 10, 21, 20))
-        self.closeButton.setStyleSheet("background-color: rgba(0, 0, 0, 0);\n"
-"selection-color: rgb(255, 255, 255);\n"
-"border-color: rgb(0, 0, 255);\n"
-"color: rgb(244, 0, 0);\n"
-"font: 75 12pt \"Arial\";")
+        self.closeButton.setGeometry(QtCore.QRect(160, 10, 20, 20))
+        #self.closeButton.setStyleSheet("background-color: rgba(0, 0, 0, 10);\n"
+
+#"selection-color: rgb(255, 255, 255);\n"
+#"border-color: rgb(0, 0, 255);\n"
+#"color: rgb(244, 0, 0);\n"
+#"font: 75 12pt \"Arial\";")
         self.closeButton.setObjectName("closeButton")
-        self.widget = QtGui.QWidget()
-        self.widget.setGeometry(QtCore.QRect(60, 10, 101, 151))
-        self.widget.setObjectName("widget")
-        self.gridLayout_2 = QtGui.QGridLayout(self.widget)
-        self.gridLayout_2.setMargin(0)
-        self.gridLayout_2.setObjectName("gridLayout_2")
-        self.lab_core3 = QtGui.QLabel(self.widget)
+        #self.widget = QtGui.QWidget()
+        
+        #self.widget.setObjectName("widget")
+        self.gridLayout = QtGui.QGridLayout(self)
+        self.gridLayout.setMargin(0)
+        self.gridLayout.setObjectName("gridLayout")
+        self.gridLayout.setGeometry(QtCore.QRect(100, 10, 101, 151))  ######
+
+        self.lab_core3 = QtGui.QLabel()
         self.lab_core3.setStyleSheet("background-color: rgba(0, 0, 0,200);\n"
 "border-color: rgba(0, 0, 127, 200);\n"
 "color: rgba(0, 255, 0, 150);\n"
 "font: 87 9pt \"Arial Black\";")
         self.lab_core3.setObjectName("lab_core3")
-        self.gridLayout_2.addWidget(self.lab_core3, 5, 0, 1, 1)
-        self.lab_core4 = QtGui.QLabel(self.widget)
+        self.gridLayout.addWidget(self.lab_core3, 3, 0, 1, 1)
+        self.lab_core4 = QtGui.QLabel()
         self.lab_core4.setStyleSheet("background-color: rgba(0, 0, 0,200);\n"
 "border-color: rgba(0, 0, 127, 200);\n"
 "color: rgba(0, 255, 0, 150);\n"
 "font: 87 9pt \"Arial Black\";")
         self.lab_core4.setObjectName("lab_core4")
-        self.gridLayout_2.addWidget(self.lab_core4, 6, 0, 1, 1)
-        self.lab_core1 = QtGui.QLabel(self.widget)
+        self.gridLayout.addWidget(self.lab_core4, 4, 0, 1, 1)
+        self.lab_core1 = QtGui.QLabel()
         self.lab_core1.setStyleSheet("background-color: rgba(0, 0, 0,200);\n"
 "border-color: rgba(0, 0, 127, 200);\n"
 "color: rgba(0, 255, 0, 150);\n"
 "font: 87 9pt \"Arial Black\";")
         self.lab_core1.setObjectName("lab_core1")
-        self.gridLayout_2.addWidget(self.lab_core1, 2, 0, 1, 1)
-        self.lab_core2 = QtGui.QLabel(self.widget)
+        self.gridLayout.addWidget(self.lab_core1, 1, 0, 1, 1)
+        self.lab_core2 = QtGui.QLabel()
         self.lab_core2.setStyleSheet("background-color: rgba(0, 0, 0,200);\n"
 "border-color: rgba(0, 0, 127, 200);\n"
 "color: rgba(0, 255, 0, 150);\n"
 "font: 87 9pt \"Arial Black\";")
         self.lab_core2.setObjectName("lab_core2")
-        self.gridLayout_2.addWidget(self.lab_core2, 4, 0, 1, 1)
-        self.lab_CPU = QtGui.QLabel(self.widget)
+        self.gridLayout.addWidget(self.lab_core2, 2, 0, 1, 1)
+        self.lab_CPU = QtGui.QLabel()
         self.lab_CPU.setStyleSheet("background-color: rgba(0, 0, 0,200);\n"
 "border-color: rgba(0, 0, 127, 200);\n"
 "color: rgba(0, 255, 0, 150);\n"
 "font: 87 9pt \"Arial Black\";")
         self.lab_CPU.setObjectName("lab_CPU")
-        self.gridLayout_2.addWidget(self.lab_CPU, 1, 0, 1, 1)
-        self.widget1 = QtGui.QWidget()
-        self.widget1.setGeometry(QtCore.QRect(10, 10, 48, 151))
-        self.widget1.setObjectName("widget1")
-        self.gridLayout = QtGui.QGridLayout(self.widget1)
+        self.gridLayout.addWidget(self.lab_CPU, 0, 1, 1, 1)
+        #self.widget1 = QtGui.QWidget()
+        #
+        #self.widget1.setObjectName("widget1")
+        self.gridLayout = QtGui.QGridLayout(self)
+        self.gridLayout.setGeometry(QtCore.QRect(10, 10, 48, 151))
         self.gridLayout.setMargin(0)
-        self.gridLayout.setObjectName("gridLayout")
-        self.temp_CPU = QtGui.QLabel(self.widget1)
+       # self.gridLayout.setObjectName("gridLayout")
+        self.temp_CPU = QtGui.QLabel()
         self.temp_CPU.setStyleSheet("background-color: rgba(0, 0, 0,200);\n"
 "border-color: rgba(0, 0, 127, 200);\n"
 "color: rgba(255, 0, 0, 150);\n"
 "font: 75 14pt \"Arial\";\n"
 "")
         self.temp_CPU.setObjectName("temp_CPU")
-        self.gridLayout.addWidget(self.temp_CPU, 0, 0, 1, 1)
-        self.temp_core1 = QtGui.QLabel(self.widget1)
+        self.gridLayout.addWidget(self.temp_CPU, 0, 1, 1, 1)
+        self.temp_core1 = QtGui.QLabel()
         self.temp_core1.setStyleSheet("background-color: rgba(0, 0, 0,200);\n"
 "border-color: rgba(0, 0, 127, 200);\n"
 "color: rgba(255, 0, 0, 150);\n"
 "font: 75 14pt \"Arial\";\n"
 "")
         self.temp_core1.setObjectName("temp_core1")
-        self.gridLayout.addWidget(self.temp_core1, 1, 0, 1, 1)
-        self.temp_core2 = QtGui.QLabel(self.widget1)
+        self.gridLayout.addWidget(self.temp_core1, 1, 1, 1, 1)
+        self.temp_core2 = QtGui.QLabel()
         self.temp_core2.setStyleSheet("background-color: rgba(0, 0, 0,200);\n"
 "border-color: rgba(0, 0, 127, 200);\n"
 "color: rgba(255, 0, 0, 150);\n"
 "font: 75 14pt \"Arial\";\n"
 "")
         self.temp_core2.setObjectName("temp_core2")
-        self.gridLayout.addWidget(self.temp_core2, 2, 0, 1, 1)
-        self.temp_core3 = QtGui.QLabel(self.widget1)
+        self.gridLayout.addWidget(self.temp_core2, 2, 1, 1, 1)
+        self.temp_core3 = QtGui.QLabel()
         self.temp_core3.setStyleSheet("background-color: rgba(0, 0, 0,200);\n"
 "border-color: rgba(0, 0, 127, 200);\n"
 "color: rgba(255, 0, 0, 150);\n"
 "font: 75 14pt \"Arial\";\n"
 "")
         self.temp_core3.setObjectName("temp_core3")
-        self.gridLayout.addWidget(self.temp_core3, 3, 0, 1, 1)
-        self.temp_core4 = QtGui.QLabel(self.widget1)
+        self.gridLayout.addWidget(self.temp_core3, 3, 1, 1, 1)
+        self.temp_core4 = QtGui.QLabel()
         self.temp_core4.setStyleSheet("background-color: rgba(0, 0, 0,200);\n"
 "border-color: rgba(0, 0, 127, 200);\n"
 "color: rgba(255, 0, 0, 150);\n"
 "font: 75 14pt \"Arial\";\n"
 "")
         self.temp_core4.setObjectName("temp_core4")
-        self.gridLayout.addWidget(self.temp_core4, 4, 0, 1, 1)
+        self.gridLayout.addWidget(self.temp_core4, 4, 1, 1, 1)
         self.setWindowTitle("Temp Gauge")
 				
         self.closeButton.setText("x")
@@ -187,7 +191,7 @@ class Example(QtGui.QWidget):
 
 
 
-        self.setWindowFlags(QtCore.Qt.FramelessWindowHint) 
+        #self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.show()
 
 
